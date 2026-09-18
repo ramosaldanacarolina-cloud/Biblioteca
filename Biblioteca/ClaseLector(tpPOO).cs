@@ -27,9 +27,14 @@ namespace Colecciones
             return librosEnPrestamo.Count;
         }
 
-        public void AgregarLibro(Libro libro)
+        public bool AgregarLibro(Libro libro)
         {
+            if(librosEnPrestamo.Count >= 3)
+            {
+                return false, //limite alcanzado
+            }
             librosEnPrestamo.Add(libro);
+            return true, //prestamo exitoso
         }
 
         public override string ToString()
